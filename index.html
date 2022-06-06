@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Human Error</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="static/css/index.css" />
+    <title>Pudding</title>
+    <link rel="shortcut icon" href="static/img/index.png" type="image/x-icon" />
     <!-- <style>
         body{
             background-image: url("https://www.weekendnotes.com/im/002/02/bakers-dozen-angus-cameron-candy-crush-artificial-31.jpg");
@@ -14,10 +16,55 @@
         }
     </style> -->
 </head>
-<body bgcolor="black">
+<body bgcolor="black" class="container-fluid">
     <br>
     <br>
     <br>
-    <center><h1 style="color: white;">404 Human Error</h1></center>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1 class="text-white text-center" id="timer_div"></h1>
 </body>
+<script>
+    function fun1(){
+        document.getElementById("timer_div").innerHTML = "buat hidup ku lebih berarti";
+    }
+    function fun2(){
+        document.getElementById("timer_div").innerHTML = "cinta muu";
+    }
+    function fun3(){
+        document.getElementById("timer_div").innerHTML = "senyaman mentarii pagii";
+    }
+    function fun4(){
+        document.getElementById("timer_div").innerHTML = "seperti pelangii";
+    }
+    function fun5(){
+        document.getElementById("timer_div").innerHTML = "selalu ku nanti";
+    }
+    function fun6(){
+        document.getElementById("timer_div").innerHTML = "sekian timaaccii :)";
+    }
+    function audio1(){
+        var audio = document.createElement("AUDIO")
+        document.body.appendChild(audio);
+        audio.src = "static/song/index.mp3"
+        audio.play()
+    }
+    setTimeout(audio1, 3000);
+    setTimeout(fun1, 3000);
+    setTimeout(fun2, 8000);
+    setTimeout(fun3, 10000);
+    setTimeout(fun4, 13000);
+    setTimeout(fun5, 16500);
+    setTimeout(fun6, 20000);
+</script>
 </html>
