@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wedding Invitation - Nurjanah & Reza</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Libre+Baskerville:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Libre Baskerville", serif;
+      }
+
+      body {
+        background: linear-gradient(to bottom, #f9f3ec, #f3e3d3);
+        color: #4b3832;
+        overflow-x: hidden;
+        position: relative;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("https://cdn.pixabay.com/photo/2017/08/30/07/52/background-2694054_1280.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        opacity: 0.1;
+        z-index: -1;
+        animation: floatBackground 60s linear infinite;
+      }
+
+      @keyframes floatBackground {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      .petal {
+        position: fixed;
+        top: -50px;
+        width: 20px;
+        height: 20px;
+        background-image: url("https://www.svgrepo.com/show/14970/heart.svg");
+        background-size: cover;
+        opacity: 0.7;
+        animation: fall linear infinite;
+      }
+
+      @keyframes fall {
+        0% {
+          transform: translateY(0) rotate(0deg);
+        }
+        100% {
+          transform: translateY(100vh) rotate(360deg);
+        }
+      }
+
+      .slide {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 2rem;
+        text-align: center;
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      h1 {
+        font-family: "Great Vibes", cursive;
+        font-size: 3rem;
+        color: #8b5e3c;
+        margin-bottom: 1rem;
+      }
+
+      p,
+      a {
+        font-size: 1.2rem;
+        color: #5e4630;
+        text-decoration: none;
+        margin: 0.5rem 0;
+      }
+
+      .button {
+        margin-top: 1.5rem;
+        background-color: #8b5e3c;
+        color: white;
+        border: none;
+        padding: 0.8rem 1.5rem;
+        border-radius: 8px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .button:hover {
+        background-color: #a97450;
+      }
+
+      .image-container {
+        margin: 1rem 0;
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .image-container img {
+        max-width: 150px;
+        border-radius: 16px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .music-toggle {
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        background-color: #8b5e3c;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+        cursor: pointer;
+        z-index: 10;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="slide" id="slide1">
+      <h1>Nurjanah & Reza</h1>
+      <p>
+        Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang
+        Bapak/Ibu/Saudara/i pada acara pernikahan kami.
+      </p>
+      <div class="image-container">
+        <img src="img1.jpeg" alt="Mempelai Wanita" />
+        <img src="img2.jpeg" alt="Mempelai Pria" />
+      </div>
+      <button class="button" onclick="playSongAndNext()">Lanjut</button>
+    </div>
+
+    <div class="slide" id="slide2" style="display: none">
+      <h1>Tanggal & Lokasi</h1>
+      <p>Minggu, 27 April 2025</p>
+      <p>Akad: 09:00 WIB | Resepsi: 10:00 WIB - Selesai</p>
+      <p>Balai RW.03 Menteng, Jakarta Pusat</p>
+      <a href="https://maps.app.goo.gl/Ux2hjJiB9yZfxNKY7" target="_blank"
+        >Lihat di Google Maps</a
+      >
+      <div>
+        <button class="button" onclick="prevSlide()">Kembali</button>
+        <button class="button" onclick="nextSlide()">Lanjut</button>
+      </div>
+    </div>
+
+    <div class="slide" id="slide3" style="display: none">
+      <h1>Amplop Digital</h1>
+      <p>BCA - 2610001087</p>
+      <p>A/N Nurjanah</p>
+      <div>
+        <button class="button" onclick="prevSlide()">Kembali</button>
+        <button class="button" onclick="nextSlide()">Lanjut</button>
+      </div>
+    </div>
+
+    <div class="slide" id="slide4" style="display: none">
+      <h1>Terima Kasih</h1>
+      <p>
+        Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila
+        Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu.
+      </p>
+      <button class="button" onclick="prevSlide()">Kembali</button>
+    </div>
+
+    <button class="music-toggle" onclick="toggleMusic()">▶</button>
+    <audio id="bg-music" src="song.mp3" loop></audio>
+
+    <script>
+      let currentSlide = 0;
+      const slides = document.querySelectorAll(".slide");
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.style.display = i === index ? "flex" : "none";
+        });
+        currentSlide = index;
+      }
+
+      function nextSlide() {
+        if (currentSlide < slides.length - 1) {
+          showSlide(currentSlide + 1);
+        }
+      }
+
+      function prevSlide() {
+        if (currentSlide > 0) {
+          showSlide(currentSlide - 1);
+        }
+      }
+
+      const music = document.getElementById("bg-music");
+      const musicToggle = document.querySelector(".music-toggle");
+
+      function toggleMusic() {
+        if (music.paused) {
+          music.play();
+          musicToggle.textContent = "⏸";
+        } else {
+          music.pause();
+          musicToggle.textContent = "▶";
+        }
+      }
+      function playSongAndNext() {
+        const audio = document.querySelector("audio");
+        if (audio) {
+          audio.play();
+          musicToggle.textContent = "⏸";
+        }
+        nextSlide();
+      }
+
+      // generate falling petals
+      for (let i = 0; i < 10; i++) {
+        const petal = document.createElement("div");
+        petal.classList.add("petal");
+        petal.style.left = Math.random() * 100 + "vw";
+        petal.style.animationDuration = 5 + Math.random() * 5 + "s";
+        document.body.appendChild(petal);
+      }
+
+      window.onload = () => {
+        showSlide(0);
+        musicToggle.textContent = music.paused ? "▶" : "⏸";
+      };
+    </script>
+  </body>
+</html>
